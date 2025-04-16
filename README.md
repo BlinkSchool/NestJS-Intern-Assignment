@@ -1,14 +1,11 @@
 # Backend (NestJS) Intern Assignment: Real-Time Attendance System
 
----
-
 ## Introduction
 
 This project involves creating a **real-time attendance system** using NestJS, WebSockets, and Redis caching. The goal is to enable teachers to mark attendance, and students to receive instant updates. Additionally, the system should handle offline scenarios, ensuring data synchronization when connectivity is restored.
 
 This document provides step-by-step instructions, explanations, and examples to help you understand and implement each part of the system.
 
----
 
 ## 1. **Understanding the Core Concepts**
 
@@ -26,7 +23,6 @@ Redis is an in-memory database used for caching data. It helps store data tempor
 - Redis caches data for quick retrieval.
 - Together, they make the system fast, scalable, and responsive.
 
----
 
 ## 2. **Setting Up Your Project**
 
@@ -39,8 +35,6 @@ Redis is an in-memory database used for caching data. It helps store data tempor
 | Redis | `redis`, `@nestjs/cache-manager`, `cache-manager-redis-store` | Caching attendance data |
 | Database | MongoDB | Persistent storage of records |
 | Testing | Jest | Testing your code |
-
----
 
 ## 3. **Initial Setup**
 
@@ -67,10 +61,7 @@ Generate a gateway:
 nest generate gateway attendance
 ```
 
-This creates `attendance.gateway.ts` and its test file.
-
----
-
+This creates `attendance.gateway.ts` and its test file
 ## 4. **Implementing the WebSocket Gateway**
 
 ### Basic Gateway Structure
@@ -106,7 +97,6 @@ export class AttendanceGateway {
 - `@SubscribeMessage()`: Handles specific message events.
 - `client.join()`: Adds clients to specific rooms (like classes).
 
----
 
 ## 5. **Caching Attendance Data with Redis**
 
@@ -161,7 +151,6 @@ export class AttendanceGateway {
 - Cache attendance data with a key based on class, student, and date.
 - Broadcast updates to all clients in the class room.
 
----
 
 ## 6. **Handling Offline Scenarios \& Data Synchronization**
 
@@ -203,8 +192,6 @@ class OfflineSync {
 }
 ```
 
----
-
 ## 7. **Testing Your System**
 
 ### What to Test:
@@ -239,8 +226,6 @@ describe('AttendanceGateway', () =&gt; {
 });
 ```
 
----
-
 ## 8. **Additional Tips \& References**
 
 - **Security**: Implement JWT authentication for WebSocket connections.
@@ -248,7 +233,6 @@ describe('AttendanceGateway', () =&gt; {
 - **Scalability**: Use Redis adapter for socket.io to run across multiple server instances ([see socket.io-redis](https://socket.io/docs/v4/redis-adapter/)).
 - **Testing WebSockets**: Use `socket.io-client` for client-side testing ([see demo here](https://dev.to/jfrancai/demystifying-nestjs-websocket-gateways-a-step-by-step-guide-to-effective-testing-1a1f)).
 
----
 
 ## 9. **Summary**
 
@@ -260,8 +244,6 @@ describe('AttendanceGateway', () =&gt; {
 | Offline | Implement offline data queue and sync | Offline support |
 | Test | Write unit and integration tests | Ensure reliability |
 
----
-
 ## 10. **Helpful Links \& References**
 
 - [NestJS WebSocket Gateway Guide](https://dev.to/jfrancai/demystifying-nestjs-websocket-gateways-a-step-by-step-guide-to-effective-testing-1a1f)
@@ -270,7 +252,6 @@ describe('AttendanceGateway', () =&gt; {
 - [NestJS WebSocket Basics](https://delightfulengineering.com/blog/nest-websockets/basics/)
 - [WebSocket in NestJS YouTube Demo](https://www.youtube.com/watch?v=eEa3u3wyYu4)
 
----
 
 ## 11. **Submission Instructions**  
 
@@ -279,7 +260,6 @@ describe('AttendanceGateway', () =&gt; {
 - Send us the **link of your GitHub repo**.
 - Ensure your project has a **proper README** explaining your setup, how to run the project, and any important details you wanna tell us.
 
----
 
 This detailed guide should help you understand each part of the assignment and implement it step-by-step. Remember, focus on understanding how WebSockets, Redis, and offline sync work together to create a fast, reliable, and scalable attendance system.
 
