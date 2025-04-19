@@ -255,9 +255,8 @@ describe('AttendanceGateway', () =&gt; {
 
 ## 11. **Submission Instructions**  
 
-- Make your repository **private**.
-- Add `ankurkr07` and `ayushflows` as **collaborators**.
-- Send us the **link of your GitHub repo**.
+- Make your repository **public**.
+- Send us the **link of your GitHub repo** on this form : [SUBMIT HERE](https://docs.google.com/forms/d/e/1FAIpQLScNdO6zKPCSP7H3mKIEj2HgcROKUtOXN6Lw-Gys7ZYrq63JfQ/viewform)
 - Ensure your project has a **proper README** explaining your setup, how to run the project, and any important details you wanna tell us.
 
 
